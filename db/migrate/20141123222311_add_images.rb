@@ -1,9 +1,9 @@
 class AddImages < ActiveRecord::Migration
   def self.up
-    add_attachment :friends, :avatar
+    add_attachment :listings, :image
   end
 
   def self.down
-    remove_attachment :friends, :avatar
+    remove_attachment :listings, :image
   end
 end

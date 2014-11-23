@@ -1,9 +1,0 @@
-development:
-  access_key_id: AKIAJXBUBUZMWXZYJOJQ
-  secret_access_key: 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
-test:
- access_key_id: AKIAJXBUBUZMWXZYJOJQ
-  secret_access_key: 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
-production:
-  access_key_id: AKIAJXBUBUZMWXZYJOJQ
-  secret_access_key: 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

@@ -48,3 +48,6 @@ config/secrets.yml
 *.bowerrc
 bower.json
 >>>>>>> a2ba024bee3014cdba33784d7e14154daa87e543
+
+# Ignore application configuration
+/config/application.yml

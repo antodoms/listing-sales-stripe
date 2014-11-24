@@ -45,7 +45,6 @@ Paperclip::Attachment.default_options.merge!({
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
-  :url => "antodoms.s3-website-us-east-1.amazonaws.com"
     })
 
 end

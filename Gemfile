@@ -6,6 +6,8 @@ gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '~> 1.59.0'
 gem 'fog'
 gem "figaro"
+gem 'devise'
+
 
 gem 'rails', '4.1.8'
 gem 'sass-rails', '~> 4.0.3'

@@ -86,4 +86,8 @@ config.paperclip_defaults = {
   }
 }
 
+
+#required by devise gem : remember to change localhost 3000 to actual
+config.action_mailer.default_url_options = { host: 'localhost', port: 80 }
+
 end

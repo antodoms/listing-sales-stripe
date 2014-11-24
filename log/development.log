@@ -1,0 +1,241 @@
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (2.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBlogs (20141122015452)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141122015452"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateListings (20141122052439)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "listings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "price" decimal, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141122052439"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Migrating to AddImages (20141123222311)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "listings" ADD "image_file_name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "listings" ADD "image_content_type" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "listings" ADD "image_file_size" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "listings" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141123222311"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-24 19:34:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.7ms)[0m  SELECT "listings".* FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 5092ms (Views: 5066.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/blogs.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/listings.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/blogs.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:20 +0530
+
+
+Started GET "/listings/new" for 127.0.0.1 at 2014-11-24 19:34:25 +0530
+Processing by ListingsController#new as HTML
+  Rendered listings/_form.html.erb (32.8ms)
+  Rendered listings/new.html.erb within layouts/application (34.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 201ms (Views: 198.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/listings" for 127.0.0.1 at 2014-11-24 19:34:39 +0530
+Processing by ListingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hpec+8g4ee6Si3CxVOhq9EdYkenTIUZgcdHDLL0Xm6E=", "listing"=>{"name"=>"asdsa", "description"=>"dfgfg", "price"=>"45", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe63ae5bd98 @tempfile=#<Tempfile:/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/RackMultipart20141124-9454-1l203jl>, @original_filename="cat weird shit.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"listing[image]\"; filename=\"cat weird shit.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Listing"}
+Command :: file -b --mime '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/c5a0c1da7c046a3f857dd9ec7095aa3d20141124-9454-16iv7nw.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c.jpg[0]'
+Command :: convert '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c.jpg[0]' -auto-orient -resize "200" '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c20141124-9454-5zi3my'
+Command :: file -b --mime '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c20141124-9454-5zi3my'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c.jpg[0]'
+Command :: convert '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c.jpg[0]' -auto-orient -resize "100x" -crop "100x100+0+4" +repage '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c20141124-9454-1ih5rcx'
+Command :: file -b --mime '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c20141124-9454-1ih5rcx'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/xn/hj4q7cds0n97qbnmbvmrq75m0000gn/T/c5a0c1da7c046a3f857dd9ec7095aa3d20141124-9454-9gco36.jpg'
+Binary data inserted for `string` type on column `image_content_type`
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "listings" ("created_at", "description", "image_content_type", "image_file_name", "image_file_size", "image_updated_at", "name", "price", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", "2014-11-24 14:04:39.829066"], ["description", "dfgfg"], ["image_content_type", "image/jpeg"], ["image_file_name", "cat_weird_shit.jpg"], ["image_file_size", 44199], ["image_updated_at", "2014-11-24 14:04:39.420061"], ["name", "asdsa"], ["price", 45.0], ["updated_at", "2014-11-24 14:04:39.829066"]]
+[paperclip] saving /listings/images/000/000/001/original/cat_weird_shit.jpg
+[AWS S3 200 5.25599 0 retries] put_object(:acl=>:public_read,:bucket_name=>"antodoms",:content_length=>44199,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: cat weird shit.jpg,:key=>"listings/images/000/000/001/original/cat_weird_shit.jpg")  
+
+[paperclip] saving /listings/images/000/000/001/medium/cat_weird_shit.jpg
+[AWS S3 200 0.978945 0 retries] put_object(:acl=>:public_read,:bucket_name=>"antodoms",:content_length=>11453,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c20141124-9454-5zi3my,:key=>"listings/images/000/000/001/medium/cat_weird_shit.jpg")  
+
+[paperclip] saving /listings/images/000/000/001/thumb/cat_weird_shit.jpg
+[AWS S3 200 0.828071 0 retries] put_object(:acl=>:public_read,:bucket_name=>"antodoms",:content_length=>4285,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: e387bd45ad74f1a2eaa7cda46b04446e20141124-9454-76n75c20141124-9454-1ih5rcx,:key=>"listings/images/000/000/001/thumb/cat_weird_shit.jpg")  
+
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:4000/listings/1
+Completed 302 Found in 7867ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/listings/1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mListing Load (0.4ms)[0m  SELECT  "listings".* FROM "listings"  WHERE "listings"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered listings/show.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 136ms (Views: 131.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/blogs.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/listings.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/blogs.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/listings.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2014-11-24 19:34:47 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-24 19:34:50 +0530
+Processing by ListingsController#index as HTML
+  [1m[36mListing Load (0.3ms)[0m  [1mSELECT "listings".* FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 148ms (Views: 146.9ms | ActiveRecord: 0.3ms)

@@ -10,6 +10,6 @@ has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100#" }
 
 
   def s3_credentials
-    {:bucket => 'antodoms' , :access_key_id => ENV['AWS_ACCESS_KEY_ID'], :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],:region => 'us-west-2'}
+    {:bucket => 'antodoms' , :access_key_id => ENV['AWS_ACCESS_KEY_ID'], :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']}
   end
 end

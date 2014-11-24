@@ -1,8 +1,0 @@
-<h1> <%= @blogs.title %> </h1>
-<p><%= @blogs.body %></p>
-<p><%= @blogs.created_at %></p>
-
-<p>
-<%= link_to "Edit", edit_blog_path(@blogs) %> ::
-<%= link_to "Delete", @blogs, :confirm => "Are you Sure?", :method => :delete  %>
-</p>

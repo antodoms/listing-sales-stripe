@@ -76,12 +76,14 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.paperclip_defaults = {
-  :storage => :s3,
+APaperclip::Attachment.default_options.merge!({
+    :storage => :s3,
+  :region => 'us-west-2',
   :s3_credentials => {
-    :bucket => ENV['S3_BUCKET_NAME'],
+    :bucket => ENV['AWS_BUCKET'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
-}
+  :url => "antodoms.s3-website-us-east-1.amazonaws.com"
+    })
 end

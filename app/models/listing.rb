@@ -10,8 +10,13 @@ has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100#" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   validates :name, :description, :price , presence: true
+  
   validates :price, numericality: { greater_than:0}
+  
   validates_attachment_presence :image
+
+  belongs_to :user
+
   def s3_credentials
     {:bucket => 'antodoms' , :access_key_id => ENV['AWS_ACCESS_KEY_ID'], :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'], :region => 'us-west-1', :s3_host_name => 's3.amazonaws.com'}
   end

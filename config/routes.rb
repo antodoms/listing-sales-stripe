@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
+  get 'seller' => 'listings#seller'
+  
   resources :blogs
 
   root'listings#index'

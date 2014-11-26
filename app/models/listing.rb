@@ -17,6 +17,8 @@ has_attached_file :image, :styles => { :medium => "200x", :thumb => "100x100#" }
 
   belongs_to :user
 
+  has_many :orders
+
   def s3_credentials
     {:bucket => 'antodoms' , :access_key_id => ENV['AWS_ACCESS_KEY_ID'], :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'], :region => 'us-west-1', :s3_host_name => 's3.amazonaws.com'}
   end
